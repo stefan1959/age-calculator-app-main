@@ -1,0 +1,152 @@
+:root {
+  /* ## Colors */
+
+  /* ### Primary */
+
+  --purple-500: 259 100% 65%;
+  --red-400: 0 100% 67%;
+
+  /* ### Neutral */
+
+  --White: 0 100% 100%;
+  --grey-100: 0 0% 94%;
+  --grey-200: 0 0% 86%;
+  --grey-500: 0 1% 44%;
+  --Black: 0 0% 0%;
+}
+
+@font-face {
+  font-family: "Poppins-400-i";
+  src: url(assets/fonts/Poppins-Italic.ttf);
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Poppins-700";
+  src: url(/assets/fonts/Poppins-Bold.ttf);
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Poppins-800-i";
+  src: url(/assets/fonts/Poppins-ExtraBoldItalic.ttf);
+  font-weight: 800;
+  font-style: italic;
+}
+.clr-purple {
+  color: hsl(var(--purple-500));
+}
+body {
+  display: grid;
+  place-content: center;
+  background-color: hsl(var(--grey-100));
+  font-family: "Poppins-700", sans-serif;
+  font-size: 1.3rem;
+  height: 100vh;
+}
+
+.age-calc-container {
+  --radius: 1.3rem;
+  display: grid;
+  gap: 3rem;
+  background-color: hsl(var(--White));
+  max-width: 375px;
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  border-bottom-right-radius: 7rem;
+  margin-bottom: 2rem;
+}
+.form {
+  display: flex;
+  gap: 1rem;
+}
+.formLabel {
+  color: hsl(var(--grey-500));
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+.dayWarning {
+  font-family: "Poppins-400-i";
+  font-size: 0.6rem;
+  height: 0;
+  color: hsl(var(--red-400));
+}
+.age-calc-inputs {
+  display: grid;
+}
+.age-calc-inputs input {
+  padding: 0.6rem;
+  border-radius: 0.4rem;
+  min-width: 6.2rem;
+  outline: 1px solid hsl(var(--grey-500));
+  border: none;
+}
+.age-calc-button {
+  --size: 2.3rem;
+  cursor: pointer;
+  display: grid;
+  justify-self: center;
+  position: relative;
+  place-items: center;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  z-index: 1;
+}
+.age-calc-button:focus {
+  border: none;
+  outline: none;
+}
+.age-calc-button::before {
+  --size: 3.5rem;
+  position: absolute;
+  content: "";
+  background-color: hsl(var(--purple-500));
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  z-index: -1;
+}
+.age-calc-button:hover::before,
+.age-calc-button:focus::before {
+  background-color: hsl(var(--Black));
+}
+.age-calc-button::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 300px;
+  background-color: hsl(var(--grey-200) / 0.6);
+  z-index: -100;
+}
+.age_result {
+  font-family: "Poppins-800-i";
+  font-size: 3rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.warning {
+  color: hsl(var(--red-400));
+}
+
+@media (min-width: 1000px) {
+  .age-calc-container {
+    min-width: 500px;
+  }
+  .age-calc-button {
+    justify-self: end;
+    margin-right: 1rem;
+  }
+  .age-calc-button::after {
+    right: 0;
+    width: 430px;
+  }
+}
+/* attribute style */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
